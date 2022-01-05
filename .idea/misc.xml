@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable/border_bg.xml" value="0.15648148148148147" />
         <entry key="app/src/main/res/drawable/circular_button.xml" value="0.16944444444444445" />
         <entry key="app/src/main/res/drawable/custom_edittetext.xml" value="0.16944444444444445" />
+        <entry key="app/src/main/res/drawable/ic_delete.xml" value="0.1361111111111111" />
         <entry key="app/src/main/res/drawable/round_btn.xml" value="0.15648148148148147" />
         <entry key="app/src/main/res/layout/activity_create_card.xml" value="0.31056319799178683" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />

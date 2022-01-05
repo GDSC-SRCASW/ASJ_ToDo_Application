@@ -15,13 +15,19 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class UpdateCard : AppCompatActivity() {
+
     private lateinit var database: myDatabase
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_card)
+        setTitle(R.string.Update_notes)
+
+
         database = Room.databaseBuilder(
             applicationContext, myDatabase::class.java, "To_Do"
         ).build()
+
         val pos = intent.getIntExtra("id", -1)
         if (pos != -1) {
             val title = DataObject.getData(pos).title

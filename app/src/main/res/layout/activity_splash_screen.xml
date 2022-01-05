@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/black"
-    android:orientation="vertical"
-    android:gravity="center_vertical"
+    android:padding="@dimen/_10sdp"
     android:layout_height="match_parent"
     tools:context="com.creatures.todo.SplashScreen">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_splash_screen_ani"
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="@dimen/_300sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_80sdp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/splash_animation" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="To Do"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@color/white"
-        android:textSize="40sp"
-        android:fontFamily="sans-serif"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Manage Your Day"
-        android:layout_gravity="center_horizontal"
-        android:textColor="#8A8686"
-        android:layout_marginTop="10dp"
-        android:textSize="16sp"
-        android:letterSpacing="0.3"
-        android:fontFamily="sans-serif"/>
-</LinearLayout>
+        android:fontFamily="@font/abril_fatface"
+        android:text="To Do Application \nASJ 2021"
+        android:textSize="@dimen/_16sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_60sdp"
+        android:gravity="center"
+        android:textColor="@color/red_500"/>
+
+</RelativeLayout>

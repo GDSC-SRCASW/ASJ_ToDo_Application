@@ -23,6 +23,7 @@ class CreateCard : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_card)
+        setTitle(R.string.Add_Notes_Details)
 
         database = Room.databaseBuilder(
             applicationContext, myDatabase::class.java, "To_Do"

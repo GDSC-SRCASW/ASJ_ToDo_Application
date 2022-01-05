@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setTitle(R.string.Home_activity)
 
         database = Room.databaseBuilder(
             applicationContext, myDatabase::class.java, "To_Do"
