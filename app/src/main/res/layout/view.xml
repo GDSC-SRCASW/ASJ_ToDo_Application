@@ -2,38 +2,60 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="7dp"
+    android:paddingHorizontal="@dimen/_5sdp"
+    android:paddingVertical="@dimen/_2sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.cardview.widget.CardView
+
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="3dp"
-        android:backgroundTint="@color/black"
-        app:cardCornerRadius="10dp">
+        app:cardCornerRadius="@dimen/_8sdp"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        app:cardElevation="@dimen/_5sdp"
+        app:cardBackgroundColor="@color/teal_700"
+        app:cardPreventCornerOverlap="false">
+
         <LinearLayout
-            android:id="@+id/mylayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"
+            android:padding="@dimen/_10sdp"
+            android:id="@+id/mylayout"
             android:orientation="vertical">
+
             <TextView
-                android:id="@+id/title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="your task will go here"
-                android:textStyle="bold"
-                android:textSize="24sp"
-                android:textColor="@color/white"
-                android:fontFamily="sans-serif"/>
-            <TextView
-                android:id="@+id/priority"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Priority - High"
-                android:textSize="15sp"
-                android:layout_marginTop="5dp"
+                android:text="Title NO"
+                android:fontFamily="@font/abhaya_libre_bold"
+                android:textStyle="bold"
+                android:id="@+id/title"
+
                 android:textColor="@color/white"
-                android:fontFamily="sans-serif"/>
+                android:textSize="@dimen/_14sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abhaya_libre_semibold"
+                android:text="Title Description here"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:textSize="@dimen/_11sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:fontFamily="@font/abhaya_libre_bold"
+                android:text="Priority:"
+                android:id="@+id/priority"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11sdp" />
+
+
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+
+    </com.google.android.material.card.MaterialCardView>
+
 </LinearLayout>

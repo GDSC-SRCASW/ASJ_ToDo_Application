@@ -28,9 +28,8 @@ class CreateCard : AppCompatActivity() {
                 var title = create_title.getText().toString().trim()
                 var priority = create_priority.getText().toString().trim()
 
-                var str: String = "High"
 
-                if(priority == "High" || priority == "HIGH")
+                if(priority.equals("HIGH",true))
                 {
                     priority = "high"
                     DataObject.setData(title, priority)
@@ -42,7 +41,8 @@ class CreateCard : AppCompatActivity() {
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
                 }
-                else if(priority == "Medium" || priority == "MEDIUM")
+
+                else if(priority.equals("MEDIUM",true))
                 {
                     priority = "medium"
                     DataObject.setData(title, priority)
@@ -54,9 +54,9 @@ class CreateCard : AppCompatActivity() {
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
                 }
-                else if (priority == "Low" || priority == "LOW")
+                else if(priority.equals("LOW",true))
                 {
-                    priority = "low"
+                    priority = "Low"
                     DataObject.setData(title, priority)
                     GlobalScope.launch {
                         database.dao().insertTask(Entity(0, title, priority))
@@ -68,9 +68,13 @@ class CreateCard : AppCompatActivity() {
                 }
                 else
                 {
-                    Toast.makeText(applicationContext,"This Word is Not allowed for Priority Use: High Medium Low",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext,"This Word is Not allowed for Priority \nUse: High Medium Low",Toast.LENGTH_SHORT).show()
                 }
 
+            }
+            else
+            {
+                Toast.makeText(applicationContext,"Enter the Empty Fields",Toast.LENGTH_SHORT).show()
             }
         }
     }

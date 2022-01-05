@@ -1,63 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/black"
     tools:context="com.creatures.todo.MainActivity">
 
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/view" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
-            android:text="Your Task"
-            android:textColor="@color/white"
-            android:textSize="40sp" />
-        <Button
-            android:id="@+id/deleteAll"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="10dp"
-            android:backgroundTint="#FF5722"
-            android:text="X"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            />
-    </LinearLayout>
-
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view"
-            tools:listitem="@layout/view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
 
         <Button
             android:id="@+id/add"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center|bottom"
-            android:layout_marginBottom="25dp"
-            android:background="@drawable/circular_button"
+            android:background="@drawable/round_btn"
             android:text="+"
+            android:textSize="@dimen/_20sdp"
             android:textColor="@color/white"
-            android:textSize="25sp" />
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginVertical="@dimen/_20sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true" />
 
-    </FrameLayout>
+        <Button
+            android:id="@+id/deleteAll"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/round_btn"
+            android:text="X"
+            android:textSize="@dimen/_16sdp"
+            android:textAllCaps="false"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginVertical="@dimen/_20sdp"
+            android:textColor="@color/white" />
 
-</LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>
 
 
 
