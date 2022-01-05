@@ -5,6 +5,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.room.Room
 import com.creatures.todo.R
@@ -14,19 +16,36 @@ import kotlinx.coroutines.launch
 
 
 class CreateCard : AppCompatActivity() {
+
     private lateinit var database: myDatabase
+    lateinit var radioButton: RadioButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_card)
+
         database = Room.databaseBuilder(
             applicationContext, myDatabase::class.java, "To_Do"
         ).build()
+
+        create_notes_radio_group
+
+
         save_button.setOnClickListener {
             if (create_title.text.toString().trim { it <= ' ' }.isNotEmpty()
                 && create_priority.text.toString().trim { it <= ' ' }.isNotEmpty()
             ) {
                 var title = create_title.getText().toString().trim()
-                var priority = create_priority.getText().toString().trim()
+                //var priority = create_priority.getText().toString().trim()
+
+                var radioGroup: RadioGroup = findViewById(R.id.create_notes_radio_group)
+
+
+                val selectedOption: Int = radioGroup!!.checkedRadioButtonId
+                radioButton = findViewById(selectedOption)
+
+                //val firstName: String = "Chike"
+                var priority: String = radioButton.text.toString().trim();
 
 
                 if(priority.equals("HIGH",true))
@@ -74,7 +93,7 @@ class CreateCard : AppCompatActivity() {
             }
             else
             {
-                Toast.makeText(applicationContext,"Enter the Empty Fields",Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext,"Enter the Empty Fields they are Important",Toast.LENGTH_SHORT).show()
             }
         }
     }

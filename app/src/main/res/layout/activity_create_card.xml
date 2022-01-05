@@ -88,6 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_8sdp"
             android:background="@drawable/border_bg"
+            android:id="@+id/create_notes_radio_group"
             android:paddingHorizontal="@dimen/_8sdp">
 
             <RadioButton
