@@ -6,6 +6,7 @@
     android:orientation="vertical"
     android:background="@color/black"
     tools:context="com.creatures.todo.MainActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,7 +54,9 @@
             android:text="+"
             android:textColor="@color/white"
             android:textSize="25sp" />
+
     </FrameLayout>
+
 </LinearLayout>
 
 

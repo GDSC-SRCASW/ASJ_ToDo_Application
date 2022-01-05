@@ -25,16 +25,52 @@ class CreateCard : AppCompatActivity() {
             if (create_title.text.toString().trim { it <= ' ' }.isNotEmpty()
                 && create_priority.text.toString().trim { it <= ' ' }.isNotEmpty()
             ) {
-                var title = create_title.getText().toString()
-                var priority = create_priority.getText().toString()
-                DataObject.setData(title, priority)
-                GlobalScope.launch {
-                    database.dao().insertTask(Entity(0, title, priority))
+                var title = create_title.getText().toString().trim()
+                var priority = create_priority.getText().toString().trim()
 
+                var str: String = "High"
+
+                if(priority == "High" || priority == "HIGH")
+                {
+                    priority = "high"
+                    DataObject.setData(title, priority)
+                    GlobalScope.launch {
+                        database.dao().insertTask(Entity(0, title, priority))
+
+                    }
+
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                }
+                else if(priority == "Medium" || priority == "MEDIUM")
+                {
+                    priority = "medium"
+                    DataObject.setData(title, priority)
+                    GlobalScope.launch {
+                        database.dao().insertTask(Entity(0, title, priority))
+
+                    }
+
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                }
+                else if (priority == "Low" || priority == "LOW")
+                {
+                    priority = "low"
+                    DataObject.setData(title, priority)
+                    GlobalScope.launch {
+                        database.dao().insertTask(Entity(0, title, priority))
+
+                    }
+
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                }
+                else
+                {
+                    Toast.makeText(applicationContext,"This Word is Not allowed for Priority Use: High Medium Low",Toast.LENGTH_SHORT).show()
                 }
 
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
             }
         }
     }
