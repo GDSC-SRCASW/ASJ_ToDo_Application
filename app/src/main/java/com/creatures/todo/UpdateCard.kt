@@ -40,7 +40,6 @@ class UpdateCard : AppCompatActivity() {
                             create_title.text.toString(),
                             create_priority.text.toString(),
                             create_description.text.toString()
-
                         )
                     )
                 }
