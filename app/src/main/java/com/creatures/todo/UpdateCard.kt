@@ -7,7 +7,10 @@ import android.util.Log
 import android.widget.Toast
 import androidx.room.Room
 import com.creatures.todo.R
+import kotlinx.android.synthetic.main.activity_create_card.*
 import kotlinx.android.synthetic.main.activity_update_card.*
+import kotlinx.android.synthetic.main.activity_update_card.create_description
+import kotlinx.android.synthetic.main.activity_update_card.create_title
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -23,7 +26,9 @@ class UpdateCard : AppCompatActivity() {
         if (pos != -1) {
             val title = DataObject.getData(pos).title
             val priority = DataObject.getData(pos).priority
+            val description = DataObject.getData(pos).description
             create_title.setText(title)
+            create_description.setText(description)
             create_priority.setText(priority)
 
             delete_button.setOnClickListener {
@@ -33,7 +38,9 @@ class UpdateCard : AppCompatActivity() {
                         Entity(
                             pos + 1,
                             create_title.text.toString(),
-                            create_priority.text.toString()
+                            create_priority.text.toString(),
+                            create_description.text.toString()
+
                         )
                     )
                 }
@@ -44,13 +51,16 @@ class UpdateCard : AppCompatActivity() {
                 DataObject.updateData(
                     pos,
                     create_title.text.toString(),
-                    create_priority.text.toString()
+                    create_priority.text.toString(),
+                    create_description.text.toString()
+
                 )
                 GlobalScope.launch {
                     database.dao().updateTask(
                         Entity(
                             pos + 1, create_title.text.toString(),
-                            create_priority.text.toString()
+                            create_priority.text.toString(),
+                            create_description.text.toString()
                         )
                     )
                 }
@@ -63,5 +73,6 @@ class UpdateCard : AppCompatActivity() {
     fun myIntent() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
+        finish();
     }
 }

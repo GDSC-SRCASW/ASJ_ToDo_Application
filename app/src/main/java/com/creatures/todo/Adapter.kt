@@ -13,6 +13,7 @@ class Adapter(var data: List<CardInfo>) : RecyclerView.Adapter<Adapter.viewHolde
     class viewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var title = itemView.title
         var priority = itemView.priority
+        var description = itemView.description
         var layout = itemView.mylayout
     }
 
@@ -30,6 +31,7 @@ class Adapter(var data: List<CardInfo>) : RecyclerView.Adapter<Adapter.viewHolde
 
         holder.title.text = data[position].title
         holder.priority.text = data[position].priority
+        holder.description.text = data[position].description
         holder.itemView.setOnClickListener{
             val intent= Intent(holder.itemView.context, UpdateCard::class.java)
             intent.putExtra("id",position)

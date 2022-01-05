@@ -33,10 +33,10 @@ class CreateCard : AppCompatActivity() {
 
         save_button.setOnClickListener {
             if (create_title.text.toString().trim { it <= ' ' }.isNotEmpty()
-                && create_priority.text.toString().trim { it <= ' ' }.isNotEmpty()
+                && create_description.text.toString().trim { it <= ' ' }.isNotEmpty()
             ) {
                 var title = create_title.getText().toString().trim()
-                //var priority = create_priority.getText().toString().trim()
+                var description = create_description.getText().toString().trim()
 
                 var radioGroup: RadioGroup = findViewById(R.id.create_notes_radio_group)
 
@@ -51,39 +51,42 @@ class CreateCard : AppCompatActivity() {
                 if(priority.equals("HIGH",true))
                 {
                     priority = "high"
-                    DataObject.setData(title, priority)
+                    DataObject.setData(title, priority, description)
                     GlobalScope.launch {
-                        database.dao().insertTask(Entity(0, title, priority))
+                        database.dao().insertTask(Entity(0, title, priority, description))
 
                     }
 
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
+                    finish();
                 }
 
                 else if(priority.equals("MEDIUM",true))
                 {
                     priority = "medium"
-                    DataObject.setData(title, priority)
+                    DataObject.setData(title, priority, description)
                     GlobalScope.launch {
-                        database.dao().insertTask(Entity(0, title, priority))
+                        database.dao().insertTask(Entity(0, title, priority, description))
 
                     }
 
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
+                    finish();
                 }
                 else if(priority.equals("LOW",true))
                 {
                     priority = "Low"
-                    DataObject.setData(title, priority)
+                    DataObject.setData(title, priority, description)
                     GlobalScope.launch {
-                        database.dao().insertTask(Entity(0, title, priority))
+                        database.dao().insertTask(Entity(0, title, priority, description))
 
                     }
 
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
+                    finish();
                 }
                 else
                 {

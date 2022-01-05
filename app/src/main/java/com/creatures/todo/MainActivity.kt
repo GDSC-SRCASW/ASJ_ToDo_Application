@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         add.setOnClickListener {
             val intent = Intent(this, CreateCard::class.java)
             startActivity(intent)
+
         }
         deleteAll.setOnClickListener {
             DataObject.deleteAll()

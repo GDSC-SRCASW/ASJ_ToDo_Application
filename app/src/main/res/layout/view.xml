@@ -30,9 +30,8 @@
                 android:fontFamily="@font/abhaya_libre_bold"
                 android:textStyle="bold"
                 android:id="@+id/title"
-
                 android:textColor="@color/white"
-                android:textSize="@dimen/_14sdp" />
+                android:textSize="@dimen/_16sdp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -40,8 +39,10 @@
                 android:fontFamily="@font/abhaya_libre_semibold"
                 android:text="Title Description here"
                 android:textColor="@color/white"
+                android:id="@+id/description"
+                android:textStyle="italic"
                 android:layout_marginTop="@dimen/_4sdp"
-                android:textSize="@dimen/_11sdp" />
+                android:textSize="@dimen/_14sdp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -49,9 +50,10 @@
                 android:layout_marginTop="@dimen/_4sdp"
                 android:fontFamily="@font/abhaya_libre_bold"
                 android:text="Priority:"
+                android:textAllCaps="true"
                 android:id="@+id/priority"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_11sdp" />
+                android:textSize="@dimen/_14sdp" />
 
 
         </LinearLayout>
