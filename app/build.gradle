@@ -49,6 +49,8 @@ dependencies {
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     //Lottie Animation
     implementation 'com.airbnb.android:lottie:4.2.2'
+    //Circle button with animation
+    implementation 'com.github.markushi:circlebutton:1.1'
 
     // room
     def room_version = "2.3.0"

@@ -5,11 +5,17 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.creatures.todo.R
+import kotlinx.android.synthetic.main.activity_update_card.*
 import kotlinx.android.synthetic.main.view.view.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class Adapter(var data: List<CardInfo>) : RecyclerView.Adapter<Adapter.viewHolder>() {
+
+
     class viewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var title = itemView.title
         var priority = itemView.priority

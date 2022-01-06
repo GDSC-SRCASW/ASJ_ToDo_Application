@@ -33,11 +33,27 @@ class UpdateCard : AppCompatActivity() {
             val title = DataObject.getData(pos).title
             val priority = DataObject.getData(pos).priority
             val description = DataObject.getData(pos).description
+
             create_title.setText(title)
-            create_description.setText(description)
             create_priority.setText(priority)
+            create_description.setText(description)
 
             delete_button.setOnClickListener {
+                DataObject.deleteData(pos)
+                GlobalScope.launch {
+                    database.dao().deleteTask(
+                        Entity(
+                            pos + 1,
+                            create_title.text.toString(),
+                            create_priority.text.toString(),
+                            create_description.text.toString()
+                        )
+                    )
+                }
+                myIntent()
+            }
+
+            delete_button_2.setOnClickListener {
                 DataObject.deleteData(pos)
                 GlobalScope.launch {
                     database.dao().deleteTask(
@@ -63,7 +79,8 @@ class UpdateCard : AppCompatActivity() {
                 GlobalScope.launch {
                     database.dao().updateTask(
                         Entity(
-                            pos + 1, create_title.text.toString(),
+                            pos + 1,
+                            create_title.text.toString(),
                             create_priority.text.toString(),
                             create_description.text.toString()
                         )

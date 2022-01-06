@@ -32,7 +32,7 @@
             android:textSize="@dimen/_20sdp"
             android:textColor="@color/white"
             android:layout_marginHorizontal="@dimen/_20sdp"
-            android:layout_marginVertical="@dimen/_20sdp"
+            android:layout_marginVertical="@dimen/_30sdp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true" />
 
@@ -43,7 +43,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
             android:layout_marginHorizontal="@dimen/_20sdp"
-            android:layout_marginVertical="@dimen/_20sdp"
+            android:layout_marginVertical="@dimen/_30sdp"
             android:background="@drawable/round_btn"
             android:fontFamily="@font/baloo_paaji"
             android:text="x"
