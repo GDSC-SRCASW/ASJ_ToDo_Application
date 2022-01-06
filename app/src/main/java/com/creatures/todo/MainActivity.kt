@@ -2,6 +2,7 @@ package com.creatures.todo
 
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -66,11 +67,20 @@ class MainActivity : AppCompatActivity() {
                     }
                     setRecycler()
                 }
-                R.id.info -> {
-                    Toast.makeText(this,"INfo", Toast.LENGTH_SHORT).show()
+                R.id.share -> {
+                    val intent= Intent()
+                    intent.action=Intent.ACTION_SEND
+                    intent.putExtra(Intent.EXTRA_TEXT,"Hey Check out this ToDo application with Recycler View and Room with It. \n\n Checkout Our Application On Github \n\nhttps://github.com/Preetojha08/ASJ_ToDo_Application")
+                    intent.type="text/plain"
+                    startActivity(Intent.createChooser(intent,"Share To:"))
                 }
-                R.id.about -> {
-                    Toast.makeText(this,"About", Toast.LENGTH_SHORT).show()
+                R.id.feedback -> {
+                    val intent = Intent(Intent.ACTION_SENDTO)
+                    intent.data = Uri.parse("mailto:") // only email apps should handle this
+                    intent.putExtra(Intent.EXTRA_EMAIL, "feedback@gmail.com")
+                    intent.putExtra(Intent.EXTRA_SUBJECT,"Feedback")
+                    startActivity(intent)
+
                 }
             }
 
