@@ -60,7 +60,7 @@ class CreateCard : AppCompatActivity() {
 
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
-                    finish();
+                    finishAffinity()
                 }
 
                 else if(priority.equals("MEDIUM",true))
@@ -74,7 +74,7 @@ class CreateCard : AppCompatActivity() {
 
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
-                    finish();
+                    finishAffinity()
                 }
                 else if(priority.equals("LOW",true))
                 {
@@ -87,7 +87,7 @@ class CreateCard : AppCompatActivity() {
 
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
-                    finish();
+                    finishAffinity()
                 }
                 else
                 {
