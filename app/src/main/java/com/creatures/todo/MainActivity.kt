@@ -4,6 +4,9 @@ package com.creatures.todo
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
 import com.creatures.todo.R
@@ -32,16 +35,10 @@ class MainActivity : AppCompatActivity() {
         add.setOnClickListener {
             val intent = Intent(this, CreateCard::class.java)
             startActivity(intent)
-            finishAffinity()
+
 
         }
-        deleteAll.setOnClickListener {
-            DataObject.deleteAll()
-            GlobalScope.launch {
-                database.dao().deleteAll()
-            }
-            setRecycler()
-        }
+
 
         setRecycler()
 
@@ -50,5 +47,33 @@ class MainActivity : AppCompatActivity() {
     fun setRecycler() {
         recycler_view.adapter = Adapter(DataObject.getAllData())
         recycler_view.layoutManager = LinearLayoutManager(this)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+        menuInflater.inflate(R.menu.menu_test , menu)
+
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item != null)
+            when(item.itemId){
+                R.id.kotlin -> {
+                    DataObject.deleteAll()
+                    GlobalScope.launch {
+                        database.dao().deleteAll()
+                    }
+                    setRecycler()
+                }
+                R.id.info -> {
+                    Toast.makeText(this,"INfo", Toast.LENGTH_SHORT).show()
+                }
+                R.id.about -> {
+                    Toast.makeText(this,"About", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+        return true
     }
 }

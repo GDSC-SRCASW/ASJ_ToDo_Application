@@ -29,6 +29,7 @@
             android:layout_gravity="center|bottom"
             android:background="@drawable/round_btn"
             android:text="+"
+            android:textStyle="bold"
             android:fontFamily="@font/baloo_paaji"
             android:textSize="@dimen/_20sdp"
             android:textColor="@color/white"
@@ -37,20 +38,6 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true" />
 
-        <Button
-            android:id="@+id/deleteAll"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginHorizontal="@dimen/_20sdp"
-            android:layout_marginVertical="@dimen/_30sdp"
-            android:background="@drawable/round_btn"
-            android:fontFamily="@font/baloo_paaji"
-            android:text="x"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_16sdp" />
 
     </RelativeLayout>
 

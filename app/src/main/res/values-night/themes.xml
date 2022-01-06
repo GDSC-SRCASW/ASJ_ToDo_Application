@@ -14,5 +14,13 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="my_edit_text_text" >
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/off_black</item>
+    </style>
+
+    <style name="my_text_view" >
+        <item name="android:textColor">@color/red_200</item>
+    </style>
 
 </resources>
