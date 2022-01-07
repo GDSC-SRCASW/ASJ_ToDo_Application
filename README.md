@@ -13,6 +13,14 @@ The proposes of the  To-Do application are specially built to keep track of erra
 2. You will be able to add as many tasks as you have.
 3. Once the task is completed, you will be able to remove it by clicking on “Task Completed” button.
 
+## <b>Screenshots of ToDo Application</b>
+
+Splash Screen | Home Screen | Add or Create New Notes | Update Notes Details | Share PopUp
+------------ | ------------- | ------------- | ------------- | -------------
+![20220107_175255](https://user-images.githubusercontent.com/47290783/148545039-b205d407-688a-413b-876c-9dfb879d692b.jpg) | ![20220107_175058](https://user-images.githubusercontent.com/47290783/148545061-db5f10a5-e5a4-4055-8861-1732c753354d.jpg) | ![20220107_175126](https://user-images.githubusercontent.com/47290783/148545117-818d3e4a-1889-41b4-8dce-020794c508f5.jpg) | ![20220107_175215](https://user-images.githubusercontent.com/47290783/148545138-423619f6-3615-497d-a4f1-f54575bf9e3e.jpg) | ![20220107_175240](https://user-images.githubusercontent.com/47290783/148545167-eb2d0470-f778-414e-91ef-fdb02deb959c.jpg)
+
+
+
 ## <b> Functionality & Concepts used : </b>
 
 The Application is very simple and interactive interface which helps person to prepare a todo list and it also uses some concepts of android to achieve the functionalities in application.
