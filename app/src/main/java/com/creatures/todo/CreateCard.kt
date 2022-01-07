@@ -1,7 +1,12 @@
 package com.creatures.todo
 
 
+import android.app.*
+import android.content.Context
 import android.content.Intent
+import android.graphics.BitmapFactory
+import android.graphics.Color
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -19,11 +24,17 @@ class CreateCard : AppCompatActivity() {
 
     private lateinit var database: myDatabase
     lateinit var radioButton: RadioButton
+    lateinit var notificationChannel: NotificationChannel
+    lateinit var notificationManager: NotificationManager
+    lateinit var builder: Notification.Builder
+    private val channelId = "12345"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_card)
         setTitle(R.string.Add_Notes_Details)
+
+        notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
         database = Room.databaseBuilder(
             applicationContext, myDatabase::class.java, "To_Do"
@@ -57,9 +68,21 @@ class CreateCard : AppCompatActivity() {
                         database.dao().insertTask(Entity(0, title, priority, description))
 
                     }
+                    val intent = Intent(this, LauncherActivity::class.java)
+                    val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        notificationChannel = NotificationChannel(channelId, description, NotificationManager .IMPORTANCE_HIGH)
+                        notificationChannel.lightColor = Color.BLUE
+                        notificationChannel.enableVibration(true)
+                        notificationManager.createNotificationChannel(notificationChannel)
+                        builder = Notification.Builder(this, channelId).setContentTitle(title).setContentText(priority.trim().toUpperCase())
+                            .setSmallIcon(R.drawable .ic_priority_high)
+                            .setLargeIcon(BitmapFactory.decodeResource(this.resources, R.drawable.ic_launcher_background)).setContentIntent(pendingIntent).setAutoCancel(true)
+                    }
+                    notificationManager.notify(12345, builder.build())
 
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
+                    val intent_i = Intent(this, MainActivity::class.java)
+                    startActivity(intent_i)
                     finishAffinity()
                 }
 
