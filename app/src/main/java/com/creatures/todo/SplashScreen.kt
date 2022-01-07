@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.room.Room
 import com.creatures.todo.R
 import kotlinx.coroutines.GlobalScope

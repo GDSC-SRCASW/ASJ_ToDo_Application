@@ -36,10 +36,7 @@ class MainActivity : AppCompatActivity() {
         add.setOnClickListener {
             val intent = Intent(this, CreateCard::class.java)
             startActivity(intent)
-
-
         }
-
 
         setRecycler()
 
@@ -53,7 +50,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 
         menuInflater.inflate(R.menu.menu_test , menu)
-
         return true
     }
 
