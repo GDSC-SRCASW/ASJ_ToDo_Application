@@ -5,11 +5,14 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
 import com.creatures.todo.R
@@ -36,6 +39,12 @@ class MainActivity : AppCompatActivity() {
             applicationContext, myDatabase::class.java, "To_Do"
         ).build()
 
+
+        model = ViewModelProviders.of(this).get(NotesViewModel::class.java)
+
+        model.allStudents.observe(this, Observer{ students->
+            Log.e("Live Data","Msg :")
+        })
 
         add.setOnClickListener {
             val intent = Intent(this, CreateCard::class.java)
