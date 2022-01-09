@@ -19,14 +19,14 @@ The proposes of the  To-Do application are specially built to keep track of erra
 
 Splash Screen | Home Screen | Add or Create New Notes | Update Notes Details | Share PopUp | Notification PopUp
 ------------ | ------------- | ------------- | ------------- | ------------- | ------------- 
-![20220107_175255](https://user-images.githubusercontent.com/47290783/148545039-b205d407-688a-413b-876c-9dfb879d692b.jpg) | ![20220107_175058](https://user-images.githubusercontent.com/47290783/148545061-db5f10a5-e5a4-4055-8861-1732c753354d.jpg) | ![20220107_175126](https://user-images.githubusercontent.com/47290783/148545117-818d3e4a-1889-41b4-8dce-020794c508f5.jpg) | ![20220107_175215](https://user-images.githubusercontent.com/47290783/148545138-423619f6-3615-497d-a4f1-f54575bf9e3e.jpg) | ![20220107_175240](https://user-images.githubusercontent.com/47290783/148545167-eb2d0470-f778-414e-91ef-fdb02deb959c.jpg) | ![6](https://user-images.githubusercontent.com/47290783/148602388-7da4048f-7e91-496b-b8a9-b6cbc789550c.jpg)
+![20220107_175255](https://user-images.githubusercontent.com/47290783/148545039-b205d407-688a-413b-876c-9dfb879d692b.jpg) | ![2](https://user-images.githubusercontent.com/47290783/148698143-1a50a997-005d-400b-b05a-64159832f30c.jpg) | ![20220107_175126](https://user-images.githubusercontent.com/47290783/148545117-818d3e4a-1889-41b4-8dce-020794c508f5.jpg) | ![20220107_175215](https://user-images.githubusercontent.com/47290783/148545138-423619f6-3615-497d-a4f1-f54575bf9e3e.jpg) | ![20220107_175240](https://user-images.githubusercontent.com/47290783/148545167-eb2d0470-f778-414e-91ef-fdb02deb959c.jpg) | ![6](https://user-images.githubusercontent.com/47290783/148602388-7da4048f-7e91-496b-b8a9-b6cbc789550c.jpg)
 
 
 <b>Night Mode</b>
 
 Splash Screen | Home Screen | Add or Create New Notes | Update Notes Details | Share PopUp | Notification PopUp
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------
-![1](https://user-images.githubusercontent.com/47290783/148548178-6849e1f1-17e9-499a-825f-09e36119184e.jpg) | ![2](https://user-images.githubusercontent.com/47290783/148548188-72f3b7ac-1cad-42e5-9cb5-e790eb99053f.jpg) | ![3](https://user-images.githubusercontent.com/47290783/148548198-8dc924e3-a778-431d-84f6-d35de633a73d.jpg) | ![4](https://user-images.githubusercontent.com/47290783/148548210-dfb0def3-52eb-4466-8b3a-83e9f41fa9ed.jpg) | ![5](https://user-images.githubusercontent.com/47290783/148548221-c32b0821-9f3d-4561-81ac-2881d2ab0f08.jpg) | ![6](https://user-images.githubusercontent.com/47290783/148602494-37e2509f-8bf0-4e91-b056-2c94c219422a.jpg)
+![1](https://user-images.githubusercontent.com/47290783/148548178-6849e1f1-17e9-499a-825f-09e36119184e.jpg) | ![2](https://user-images.githubusercontent.com/47290783/148698157-c1373b0e-576c-41c7-b411-097db4e81b2b.jpg) | ![3](https://user-images.githubusercontent.com/47290783/148548198-8dc924e3-a778-431d-84f6-d35de633a73d.jpg) | ![4](https://user-images.githubusercontent.com/47290783/148548210-dfb0def3-52eb-4466-8b3a-83e9f41fa9ed.jpg) | ![5](https://user-images.githubusercontent.com/47290783/148548221-c32b0821-9f3d-4561-81ac-2881d2ab0f08.jpg) | ![6](https://user-images.githubusercontent.com/47290783/148602494-37e2509f-8bf0-4e91-b056-2c94c219422a.jpg)
 
 
 ## <b> Functionality & Concepts used : </b>
@@ -36,7 +36,7 @@ The Application is very simple and interactive interface which helps person to p
 - Layouts: Different Layouts are used in the activities to achieve the responsiveness of an activities.
 - Simple & Easy Views Design : Use of familiar audience EditText with hints and interactive buttons made it easier for users to prepare a todo list.
 - RecyclerView : To present the list of different task or work to be done by the user. And it is also used to store and manage UI-related data in a lifecycle conscious way.  
-- ViewModel: ViewModel to store and manage UI-related data in a lifecycle conscious way.
+- ViewModel And LiveData: ViewModel to store and manage UI-related data in a lifecycle conscious way. Live model and live data are used while the user is updating any task or note. Due to this even if the user device changes any configuration like screen rotation, keyboard then it responds to it and updates live as it constantly observes the lifecycle of the app and maintains the scope throughout the lifecycle.
 - Notification Manager: Notification manager to manage the high priority note of the user, And it is an better way to interact with User.
 - Room Database : Persistence library which provides an abstraction layer over SQLite to allow for more robust database access while harnessing the full power of SQLite.
 
