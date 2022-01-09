@@ -21,46 +21,54 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
+                android:id="@+id/mylayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/_10sdp"
-                android:id="@+id/mylayout"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Title NO"
-                    android:fontFamily="@font/abhaya_libre_bold"
-                    android:textStyle="bold"
                     android:id="@+id/title"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_16sdp" />
-
-                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/abhaya_libre_bold"
+                    android:text="Title NO"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_6sdp"
                     android:fontFamily="@font/abhaya_libre_semibold"
                     android:text="Title Description here"
                     android:textColor="@color/white"
-                    android:id="@+id/description"
-                    android:textStyle="italic"
-                    android:layout_marginTop="@dimen/_6sdp"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="italic" />
 
                 <TextView
+                    android:id="@+id/priority"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_4sdp"
                     android:fontFamily="@font/abhaya_libre_bold"
                     android:text="Priority:"
                     android:textAllCaps="true"
-                    android:id="@+id/priority"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_14sdp" />
 
             </LinearLayout>
 
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/share"
+                android:id="@+id/image_view_share"
+                android:layout_alignParentRight="true"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginVertical="@dimen/_11sdp"/>
 
         </RelativeLayout>
 
