@@ -8,6 +8,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
 import com.creatures.todo.R
@@ -23,6 +25,7 @@ import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
 
     private lateinit var database: myDatabase
+    private lateinit var model: NotesViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         database = Room.databaseBuilder(
             applicationContext, myDatabase::class.java, "To_Do"
         ).build()
+
 
         add.setOnClickListener {
             val intent = Intent(this, CreateCard::class.java)

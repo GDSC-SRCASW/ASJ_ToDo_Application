@@ -56,7 +56,6 @@ class Adapter(var data: List<CardInfo>) : RecyclerView.Adapter<Adapter.viewHolde
 
         }
 
-
         val user_notes9: MutableLiveData<List<Entity>> by lazy {
             MutableLiveData<List<Entity>>()
         }
